@@ -7,9 +7,10 @@ import {UsersService} from '../services/users.service';
   styleUrls: ['./active-users.component.css']
 })
 export class ActiveUsersComponent {
-  @Input() users: string[];
 
   constructor(private usersService: UsersService) {};
+
+  users = this.usersService.activeUsers;
 
   onSetToInactive(id: number) {
     this.usersService.setToInactive(id);
