@@ -12,4 +12,15 @@ export class AppComponent {
 
   activeUsers = this.usersService.activeUsers;
   inactiveUsers = this.usersService.inactiveUsers;
+
+  changeCountToActive = this.usersService.changeCountToActive;
+  changeCountToInactive = this.usersService.changeCountToInactive;
+
+  grabber = this.usersService.changeCountsEmitter.subscribe(() => this.changeCounters());
+
+  private changeCounters() {
+    this.changeCountToActive = this.usersService.changeCountToActive;
+    this.changeCountToInactive = this.usersService.changeCountToInactive;
+  }
+
 }

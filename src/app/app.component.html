@@ -7,6 +7,10 @@
       <app-inactive-users
         [users]="inactiveUsers"
         ></app-inactive-users>
+      <ul>
+          <li>Changes to inactive user: {{ changeCountToInactive }}</li>
+          <li>Changes to inactive user: {{ changeCountToActive }}</li>
+        </ul>
     </div>
     <!--
       Optimize this app by adding a UsersService which manages the active and inactive users.
